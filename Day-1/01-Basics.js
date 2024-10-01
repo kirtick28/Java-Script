@@ -1,3 +1,5 @@
+//Basics of Java Script
+
 alert('hello');
 alert('Good job!');
 

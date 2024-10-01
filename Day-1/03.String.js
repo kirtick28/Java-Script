@@ -1,3 +1,5 @@
+//Basics of String
+
 'hello'
 alert('hello');
 
