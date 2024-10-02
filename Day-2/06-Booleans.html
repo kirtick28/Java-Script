@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        <title>Booleans</title>
+    </head>
+    <body>
+        <script>
+            // console.log(typeof true);  //boolean
+            // console.log(typeof 'false'); //string 
+
+            //Comparison operators
+            //> < >= <= === !== == != 
+            //=== checks along with datatype. Ex:  1==='1' false
+            //only checks the value. Ex: 1=='1' true , 1=='1.00' true
+            //comparison operators has less precedence than arithmetic operators
+            // let age = 17;
+            // if(age>=18){
+            //     console.log("Major");
+            // }else if(age>=16)
+            //     console.log("Adult");
+            // else
+            //     console.log("Minor");
+            //Falsy values => false 0 '' NaN undefined null
+            // var x; //undefined
+            let y = 'test'/4;  //Not a Number - NaN
+            console.log(y);
+            
+            //Anything other than this is truthy values
+            if(NaN)
+                console.log("asf");
+            console.log(undefined?"TRUE":"FALSE");
+            // Following will result boolean values
+            // These has precedence lower than conditional operators
+            // && - AND
+            // || - OR
+            // !  - NOT
+        </script>
+    </body>
+</html> 

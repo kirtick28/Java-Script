@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <head>
+        <title>Cart Quantity</title>
+    </head>
+    <body>
+        <p>Cart Quantity</p>
+        <button onclick="
+            console.log(`Cart Quantity : ${x}`);">Show Quantity</button>
+        <button onclick="x++;console.log(`Cart Quantity : ${x}`);">Add to Cart</button>
+        <button onclick="x+=2;console.log(`Cart Quantity : ${x}`);">+2</button>
+        <button onclick="x+=3;console.log(`Cart Quantity : ${x}`);">+3</button>
+        <button onclick="console.log('Reset successful');x=0;console.log(`Cart Quantity : ${x}`);">Reset Cart</button>
+
+        <script>
+            let x=0;            
+        </script>
+    </body>
+</html>
