@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <p>Simple Calculator</p>
+        <p>
+            <button onclick="f('1');">1</button>
+            <button onclick="f('2');">2</button>
+            <button onclick="f('3');">3</button>
+            <button onclick="f('+');">+</button>
+        </p>
+        <p>
+            <button onclick="f('4');">4</button>
+            <button onclick="f('5');">5</button>
+            <button onclick="f('6');">6</button>
+            <button onclick="f('/');">/</button>
+        </p>
+        <p>
+            <button onclick="f('7');">7</button>
+            <button onclick="f('8');">8</button>
+            <button onclick="f('9');">9</button>
+            <button onclick="f('*');">*</button>
+        </p>
+        <p>
+            <button onclick="f('0');">0</button>
+            <button onclick="calculate();">=</button>
+            <button onclick="f('.');">.</button>
+            <button onclick="f('/');">/</button>
+        </p>
+        <p>
+            <button onclick="cal='';localStorage.removeItem('cal')">CLEAR</button>
+        </p>
+        <script>
+            let cal=localStorage.getItem('cal') || '';
+            function f(c){
+                cal+=c;
+                console.log(cal);
+            }
+            function calculate(){
+                alert(`Expression : ${cal}\nResult : ${eval(cal)}`);
+                localStorage.setItem('cal',cal);
+            }
+        </script>
+    </body>
+</html>
