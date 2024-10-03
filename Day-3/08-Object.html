@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <script>
+            /*
+            console.log(localStorage.getItem('message'));
+            //These are called objects which has multiple values - can be accessed through the property 
+            //Object makes our code organized and it allows use to group and use multiple values together
+            //This is called property value pair
+            //To access the value associated with property, we need to use . operator i.e object.property to get value
+            //If we access the invalid property, the output is undefined
+            //Example
+            const product = {  //object
+                name : "socks",  //property
+                // ['delevery-time'] : '2 days'
+                'delevery-time' : '2 days', //this will also work
+                rating : { //nested object
+                    stars : 3.5,
+                    count : 34
+                },
+                fun: function f(){
+                    console.log("fun");
+                }
+            }   
+            /*
+            //Accessing the object and values of properties
+            console.log(product);
+            console.log("Type : ",typeof(product));
+            console.log(product.name);
+            console.log(product.price);
+            //Modify the property
+            product.name="tshirt";
+            console.log(product);
+            //Accessing invalid property - output is undefined
+            console.log(product.pice);
+            //To add a property
+            product.rating = 4.3;
+            console.log(product); 
+            //To delete a property;
+            delete product.rating;
+            console.log(product);
+            product.price++;
+            console.log(product);*/
+
+            /*
+            console.log(product['name']);
+            // console.log(product.delivery-time); // this is error because java consideres hypen as subtraction. so we use []
+            //For properties that wont work on dot notation we use []
+            console.log(product['delevery-time']);
+            //Inside of object we can save any type of value
+            console.log(product['rating']);
+            console.log(product.rating.stars);
+            console.log(product['rating']['count']);
+            product.fun(); //function inside the object is called method
+            product['fun'](); 
+            //console is a object which has a property called log - which is a function that prints the content that we give
+            //Build-in objects -> console, Math, JSON, localstorage
+            //JSON - Javascript Object Notation
+            //Similar syntax to normal object but has less features
+            //All property and values must be in quotes
+            //Single quotes not allowed. Quotes not necessary for number (int,float)
+            //JSON doesn't support function
+            //Why JSON is preferred over javascript object. Because JSON is understood by many languages and javascript object is not. JSON is universal
+            //stringify converts js object into JSON and it is a method of JSON
+            const str = JSON.stringify(product) //Converts js obj to string
+            console.log(typeof str);
+            console.log(str); 
+            const x = JSON.parse(str); //Converts string to js obj
+            console.log(x);
+            console.log(typeof x);
+            //All variables will be deleted when page is reloaded, so we use localstorage build in object
+            localStorage.setItem('message','hi'); //Only supports string
+            */
+            //Auto boxing
+            console.log('hello'.length);
+            console.log('hello'.toUpperCase());
+            //These strings are not a objects then how it has properties and functions like length and to upper case. It is becoz of autoboxing.
+            //Javascript automatically wraps the 'hello' into special object. This object has length property and toUpperCase() function. It is done automatically. It is not visible to us. This is autoboxing.
+            //Auto boxing works with numbers and boolean but not with null and undefined
+
+            //Objects are just reference
+            const obj1 = {
+                name:"kirtick"
+            };
+            const obj2=obj1; //this doesnt make copy of obj1, it's just a reference to the memory where the property stored. This is called copy by reference
+
+            obj1.name="harii";
+            console.log(obj1);
+            console.log(obj2); // becoz obj2 is also referring to the same memory.
+
+            const obj3 = {
+                name:"harii"
+            };
+            console.log(obj3===obj1); //checks the references, not the values   
+            console.log(obj2===obj1); //Both has same references
+            const obj4 = {
+                name:"maiseee",
+                price : 1000
+            }
+            // const message = obj1.message;
+            //Instead of above, we can use destructuring - easier way to take properties out of the object
+            const { name , price } = obj4;
+            console.log(name, price);
+            let age = 18;
+            //Shorthand property and shorthand method
+            const obj5 = {
+                // name : name,
+                name,
+                // price : price
+                price, 
+                //normal variable
+                age,
+                //method : function f1(){
+                //  console.log("FUNNY");
+                //}
+                method() {
+                    console.log("Hello");
+                }
+            }
+            console.log(obj5);
+        </script>
+    </body>
+</html> 
