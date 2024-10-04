@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <head>
+        <title>Exercise</title>
+    </head>
+    <body>
+        <button>9a</button>
+        <button class="btn">9b</button><br><br>
+
+        <button onclick="fun('heads')">heads</button>
+        <button onclick="fun('tails');">tails</button>
+        <p class="result"></p>
+
+        <input placeholder="Name" class="input" onkeydown="
+        if(event.key==='Enter')
+            Submit();">
+        <button class="submit" onclick="Submit();">Submit</button>
+        <p class="display"></p>     
+        
+        <input onkeyup="document.querySelector('.dis').innerHTML = event.target.value" class = 'inp'>
+        <p class="dis"></p>
+
+        <button onclick="f1(1);">Add to Card</button>
+        <button onclick="f1(2);">+2</button>
+        <button onclick="f1(3);">+3</button>
+        <button onclick="f1(4);">+4</button>
+        <button onclick="f1(5);">+5</button>
+        <button onclick="f1(-1);">Remove from cart</button>
+        <button onclick="f1(-2);">-2</button>
+        <button onclick="f1(-3);">-3</button>
+        <p class="Quantity"></p>
+
+        <br>
+        <p>Simple Calculator</p>
+        <p class="Calculated"></p>
+        <p>
+            <button onclick="f('1');">1</button>
+            <button onclick="f('2');">2</button>
+            <button onclick="f('3');">3</button>
+            <button onclick="f('+');">+</button>
+        </p>
+        <p>
+            <button onclick="f('4');">4</button>
+            <button onclick="f('5');">5</button>
+            <button onclick="f('6');">6</button>
+            <button onclick="f('/');">/</button>
+        </p>
+        <p>
+            <button onclick="f('7');">7</button>
+            <button onclick="f('8');">8</button>
+            <button onclick="f('9');">9</button>
+            <button onclick="f('*');">*</button>
+        </p>
+        <p>
+            <button onclick="f('0');">0</button>
+            <button onclick="calculate();">=</button>
+            <button onclick="f('.');">.</button>
+            <button onclick="f('/');">/</button>
+        </p>
+        <p>
+            <button onclick="
+            f('');
+            localStorage.removeItem('calu');
+            ">CLEAR</button>
+        </p>
+
+        <script>
+            console.log(document.querySelector('button'));
+            console.log(document.querySelector('.btn'));
+            document.querySelector('.btn').innerHTML="9b Changed!";
+            let q = 0;
+            function f1(val){
+                q+=val;
+                document.querySelector('.Quantity').innerHTML = `Cart Quantity: ${q}`;
+            }
+            function fun(choice){
+                const ele = document.querySelector('.result');
+                ele.innerHTML = `Your Choice : ${choice}`;
+            }
+            function Submit(){
+                const name = document.querySelector('.input').value;
+                let res = '';
+                if(name)
+                    res = `Your name : ${name}`;
+                document.querySelector('.display').innerHTML = res;
+            }
+            let cal=localStorage.getItem('calu') || '';
+            function f(c){
+                if(c=='')
+                    cal=c;
+                cal+=c;
+                document.querySelector('.Calculated').innerHTML = cal;
+            }
+            function calculate(){
+                if(cal==''){
+                    return; //this is not working
+                }
+                cal = String(eval(cal));
+                document.querySelector('.Calculated').innerHTML = cal;
+                localStorage.setItem('calu',cal);
+            }
+        </script>
+    </body>
+</html>
