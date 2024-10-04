@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <head>
+        <title>DOM</title>
+    </head> 
+    <body>
+        <button>Hello</button>
+        <button class="second">Second Button</button>
+        <script>
+            /*
+            document.body.innerHTML='hello'; 
+            //document->property:body(object)->property:innerHTML
+            document.title = 'Fun'; 
+            //document->property:title
+            //Document object represents/models a webpage -> Document Object Model (DOM)
+            // It works same as every other object.
+            //Document object is connected to webpage. If we change here, it will affect the webpage
+            //Document object also has methods
+            */
+            /*console.log(document.title); 
+            document.title = 'changed';
+            console.log(document.body);
+            console.log(typeof document.body); //object -> HTML element converted into js object
+            document.body.innerHTML = 'Hleoo'; //controls all the HTML inside the body;
+            console.log(document.body.innerHTML);
+            document.body.innerHTML = '<button>Kirtick</button>'
+            document.querySelector() // used to select any element from the page and put it inside js*/
+            console.log(document.querySelector('button'));
+            console.log(document.querySelector('.second'));
+            //every element in html has property called innerHTML
+            // console.log(document.querySelector('button').innerHTML);
+            // console.log(document.querySelector('.second').innerHTML);
+            const s = document.querySelector(".second");
+            
+            s.innerHTML = "Changed";
+            /*DOM combines js and html code together
+            It gives js full control of webpage*/
+        </script>
+    </body>
+</html> 
