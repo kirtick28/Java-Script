@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <head>
+        <title>DOM Exercise</title>
+        <style>
+            .subscribe{
+                cursor: pointer;
+                background-color:black;
+                color : white;
+                border : none;
+                padding-left : 15px;
+                padding-right : 15px;
+                padding-bottom : 10px;
+                padding-top : 10px;
+                font-weight: bold;
+                border-radius: 50px;
+                margin-bottom: 30px;
+            }
+            .isSubscribed{
+                background-color: rgb(240,240,240);
+                color : black;
+            }
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .js-input{
+                font-size: 15px;
+                padding : 10px;
+            }
+            .calculateBtn{
+                color:white;
+                background-color: green;
+                font-size : 15px;
+                padding: 12px 15px;
+                border : none;
+                cursor: pointer;
+            }
+        </style>
+    </head> 
+    <body>
+        <p>Youtube Exercise Button</p>
+        <button onclick="sub()" class="subscribe">Subscribe</button>
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40 = +$10 Shipping</p>
+        <p>Orders over $40 = FREE Shipping</p>
+        <input placeholder="Cost of order" class="js-input" onkeydown="keyDown()">
+        <button onclick="calculate()" class="calculateBtn">Calculate</button>
+        <p class="js-finalAmt"></p>
+        
+        <p>Rock Paper Scissors</p>
+        <a href="10-RPS-With-CSS.html">Link</a>
+        <script>
+            //There is a object called window which contains all the other objects like console, document
+            //window.console.log()
+            //window.document.<some property>
+            
+            function keyDown(){
+                if(event.key==='Enter'){
+                    calculate();
+                }
+            }
+            function calculate(){
+                const inputElmt = document.querySelector('.js-input');
+                let cost = Number(inputElmt.value); //converts string to number
+                if(!cost)
+                    return;
+                if(cost<40)
+                    cost+=10;
+                document.querySelector('.js-finalAmt').innerHTML = `$${cost}`;
+            }
+            function sub(){
+                const but = document.querySelector(".subscribe");
+                if(but.innerText==="Subscribe"){
+                    but.innerHTML="Subscribed";
+                    but.classList.add("isSubscribed");
+                }
+                else{
+                    but.classList.remove("isSubscribed");
+                    but.innerHTML="Subscribe";
+                }
+            }
+        </script>
+    </body>
+</html> 
