@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="Styles/10-Calculator-With-CSS.css">
+    </head>
+    <body>
+        <p class="Calculated"></p>
+        <p>
+            <button class="calculator-button gray" onclick="f('1');">1</button>
+            <button class="calculator-button gray" onclick="f('2');">2</button>
+            <button class="calculator-button gray" onclick="f('3');">3</button>
+            <button class="calculator-button orange" onclick="f('+');">+</button>
+        </p>
+        <p>
+            <button class="calculator-button gray" onclick="f('4');">4</button>
+            <button class="calculator-button gray" onclick="f('5');">5</button>
+            <button class="calculator-button gray" onclick="f('6');">6</button>
+            <button class="calculator-button orange" onclick="f('/');">/</button>
+        </p>
+        <p>
+            <button class="calculator-button gray" onclick="f('7');">7</button>
+            <button class="calculator-button gray" onclick="f('8');">8</button>
+            <button class="calculator-button gray" onclick="f('9');">9</button>
+            <button class="calculator-button orange" onclick="f('*');">*</button>
+        </p>
+        <p>
+            <button class="calculator-button gray" onclick="f('0');">0</button>
+            <button class="calculator-button gray" onclick="f('.');">.</button>
+            <button class="calculator-button gray" onclick="calculate();">=</button>
+            <button class="calculator-button orange" onclick="f('/');">/</button>
+        </p>
+        <p>
+            <button class="calculator-button gray clearBtn" onclick="
+            f('');
+            localStorage.removeItem('calu');
+            ">Clear</button>
+        </p>
+        <script src="Scripts/10-Calculator-With-CSS.js"></script>
+        </script>
+    </body>
+</html> 

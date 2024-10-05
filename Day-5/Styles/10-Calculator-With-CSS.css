@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+    font-family: Arial;
+}
+.Calculated{
+    color:white;
+    font-size:45px;
+    margin-top:15px;
+    margin-bottom: 5px;
+}
+.calculator-button{
+    border:none;
+    cursor: pointer;
+    color : white;
+    font-size: 25px;
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    margin-right: 5px;
+}
+.gray{
+    background-color: rgb(51,51,51);
+}
+.orange{
+    background-color: rgb(254,160,10);
+}
+.clearBtn{
+    font-size: 20px;
+}
