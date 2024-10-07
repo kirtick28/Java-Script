@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+    <head>
+        <title>Exercise</title>
+        <style>
+            button{
+                cursor:pointer;
+            }
+            .addCart{
+                background-color: rgb(255,216,20);
+                border: none;
+                font-family: Arial;
+                font-size: 15px;
+                padding: 15px 60px;
+                border-radius: 30px;
+                margin-bottom: 30px; 
+            }
+            .common, .common1, .common2{
+                font-weight: bold;
+                background-color: rgb(230,230,230);
+                color: black;
+                font-size: 15px;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 5px;
+                margin-right: 20px;
+                margin-bottom: 30px;
+            }
+            .btn1{
+                background-color: black;
+                color:white;
+            }
+            .cat{
+                margin-top: 30px;
+                margin-right: 20px;
+                font-size: 15px;
+            }
+            .js-input{
+                font-size: 15px;
+                padding : 10px;
+            }
+            .calculateBtn{
+                color:white;
+                background-color: green;
+                font-size : 15px;
+                padding: 12px 15px; 
+                border : none;
+                cursor: pointer;
+            }
+            .error{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <button class="addCart">Add to Cart</button>
+        <br> -->
+        <button class="common1 btn1" onclick="fun('.common1')">Request now</button>
+        <button class="common2 btn1" onclick="fun('.common2')">Schedule for Later</button>
+        <br>
+        <!-- <button class="js-button">Test</button>
+        <br> -->
+        <button class="common gamingBtn" onclick="
+            fun2('.gamingBtn');
+        ">Gaming</button>
+        <button class="common musicBtn" onclick="
+            fun2('.musicBtn');
+        ">Music</button>
+        <button class="common techBtn" onclick="
+            fun2('.techBtn');
+        ">Tech</button>
+        <br>
+        <input placeholder="Cost of order" class="js-input" onkeydown="keyDown()">
+        <button onclick="calculate()" class="calculateBtn">Calculate</button>
+        <p class="js-finalAmt"></p>
+        <script>
+            function fun(y){
+                const x = document.querySelector(y);
+                if(!x.classList.contains('btn1'))
+                    x.classList.add('btn1');
+                else
+                    x.classList.remove('btn1');
+            }
+            function fun2(y){
+                const x = document.querySelector(y);
+                if(!x.classList.contains('btn1')){
+                    check();
+                    x.classList.add('btn1');
+                }
+                else
+                    x.classList.remove('btn1');
+            }
+            function check(){
+                const k = document.querySelector('.btn1');
+                if(k)
+                    k.classList.remove('btn1');
+            }
+            function keyDown(){
+                if(event.key==='Enter'){
+                    calculate();
+                }
+            }
+            function calculate(){
+                const inputElmt = document.querySelector('.js-input');
+                let cost = Number(inputElmt.value);
+                const res = document.querySelector('.js-finalAmt');
+                if(!cost){
+                    res.innerHTML = "Error: Invalid cost";
+                    res.classList.add('error');
+                    return;
+                }
+                if(cost<0){
+                    res.innerHTML = `Error: Cost cannot be less than $0`;
+                    res.classList.add('error');
+                    return;
+                }
+                if(res.classList.contains("error"))
+                    res.classList.remove('error');
+                if(cost<40)
+                    cost+=10;
+                res.innerHTML = `$${cost}`;
+            }
+            // const x = document.querySelector('.js-button');
+            // console.log(x.classList.contains('js-button'));
+            
+        </script>
+    </body>
+</html>
