@@ -86,7 +86,7 @@ git clone https://github.com/kirtick28/Java-Script.git
 ```
 2. Navigate to the directory
 ```
-cd javascript-learning-journey
+cd Java-Script
 ```
 3. Open the code in your favorite editor and start exploring!
 
