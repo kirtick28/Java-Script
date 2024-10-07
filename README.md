@@ -82,7 +82,7 @@ Feel free to follow my progress or even contribute if you're interested! Let’s
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/javascript-learning-journey.git
+git clone https://github.com/kirtick28/Java-Script.git
 
 # 2. Navigate to the directory
 cd javascript-learning-journey
