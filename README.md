@@ -80,15 +80,16 @@ Feel free to follow my progress or even contribute if you're interested! Let’s
 
 ## 🛠️ How to Use This Repository
 
+1. Clone the repo
 ```bash
-# 1. Clone the repo
 git clone https://github.com/kirtick28/Java-Script.git
-
-# 2. Navigate to the directory
-cd javascript-learning-journey
-
-# 3. Open the code in your favorite editor and start exploring!
 ```
+2. Navigate to the directory
+```
+cd javascript-learning-journey
+```
+3. Open the code in your favorite editor and start exploring!
+
 
 ## 🤝 Contributing
 Contributions, suggestions, and improvements are always welcome! Just submit an issue or a pull request, and let's collaborate to make this journey better.
