@@ -69,6 +69,7 @@ JavaScript is essential for both **frontend** and **backend** development. I'm s
 | Day 4      | DOM Manipulation |
 | Day 5      | Basics of CSS with DOM |
 | Day 6      | Array ans Looping Statements |
+| Day 7      | Advanced Functions |
 
 ---
 

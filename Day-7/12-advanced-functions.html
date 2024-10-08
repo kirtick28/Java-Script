@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <head>
+        <title>Advanced Functions</title>
+        <style>
+            
+        </style>
+    </head> 
+    <body>
+        <script>
+            
+            //Functions are also values - we can save functions inside variables
+            // func1; We cannot call these variably declared functions before its initialization. but in normal function we can
+            f(); //This is hoisting 
+            const func1 = function greeting(){
+                console.log("Hello");
+            }
+            func1();
+            // greeting(); //Error - we can access only with variable name. Greeting is not neccessary.
+            const func2 = function (){
+                console.log("How are you");
+            }
+            func2();
+            console.log(func1);
+            console.log(func2);
+            function f(){
+                console.log('Hoisting');
+            }
+            //We can save the value(function) inside the object
+            let obj = {
+                num: 2,
+                fun: function hello(){
+                    console.log("Helloooo");
+                }
+                
+            }
+            obj.fun();
+            // obj.hello(); This is not possible    
+            function display(param){
+                console.log(param);
+            }    
+            display(12);
+            function run(fe){
+                fe();
+            }
+            run(function() {
+                console.log("Parameter function");
+            })
+
+            //Asynchronus code
+        //    setTimeout(function(){
+        //     console.log("Second");
+        //     // conole.log("Second2"); //error will come after 3 second
+        //    },3000); //Asynchornus - Computer wont wait for this line before going to next line. It will see this and timer starts then first will be printed. after 3 sec from the timer starts it will print second
+
+           //Synchronus code - computer will wait for one line to finish before going to next line - All the code we have been seen so far is synchronus. It will run line by line. the body of the function that is defined above inside setTimeOut is also synchronus code (console.log(Second))
+        //    console.log('First');
+           
+        //    setInterval(function(){  
+        //         console.log("Interval");
+        //    },5000); //It will keep run on every 3 seconds & it is also asynchronus
+            let a = [11,3,4,2,3,23,44,5,74,34,34,2,4];
+            let max = -Infinity, min=Infinity;
+            a.forEach(function(ele, index){
+                if(index == 4)
+                    return; //this is like continue statement;
+                //If we want to use break inside loop then switch to regular for loop instead of forEach loop
+                if(max<ele)
+                    max=ele;
+                if(min>a[index])
+                    min=a[index];
+            })
+            console.log(max, min);
+        </script>
+    </body>
+</html> 
