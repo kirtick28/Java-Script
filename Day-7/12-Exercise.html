@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <head>
+        <title class="title">Exercise</title>
+    </head>
+    <body>
+        
+        <p>
+            <button class="btn1" onclick="change()">Start</button>
+        </p>
+        <p>
+            <button class="addToCart" onclick="addCart()">Add to Cart</button>
+            <p class="message"></p>
+            <button class="add" onclick="number++;">Add</button>
+            <button class="remove" onclick="
+                if(number>0)
+                    number--;
+            ">Remove</button>
+
+        </p>
+        <script>
+            let isAdded = false;
+            let number = 0;
+            let cart;
+            let isTitleChanged = false;
+            const title = document.querySelector('.title');
+            const docTitle = title.innerHTML;
+            setInterval(function(){
+                if(!isTitleChanged && number>0){
+                    title.innerText = `(${number}) Messages`;
+                    isTitleChanged = true;
+                }
+                else{
+                    title.innerText = docTitle;
+                    isTitleChanged = false;
+                }
+            },1000);
+            const add = function(){
+                console.log(2+3);
+            }
+            add();
+            function runTwice(fun){
+                fun();
+                fun();
+            }
+            runTwice(add);
+            runTwice(function(){
+                console.log("12b");
+            })
+            function change(){
+                const btn = document.querySelector(".btn1");
+                btn.innerText = "Loading.."; 
+                setTimeout(function(){
+                    btn.innerText = "Finished!";
+                },1000)
+            }
+            function addCart(){
+                clearTimeout(cart);
+                const mes = document.querySelector(".message");
+                mes.innerHTML = "Added";
+                cart = setTimeout(function(){
+                    mes.innerHTML = '';
+                },2000);
+            }
+            
+        </script>
+    </body>
+</html>
